@@ -1,6 +1,6 @@
 # Delivery Gate Ledger Template
 
-Use this template to keep JYF completion evidence auditable across context loss, retests, and handoffs.
+用于让 JYF 交付证据在上下文丢失、重测和交接时保持可审计。
 
 ```markdown
 # <feature/task> JYF Delivery Gate Ledger
@@ -30,6 +30,16 @@ Use this template to keep JYF completion evidence auditable across context loss,
 | Fresh automated verification passed | pending/pass/fail/blocked | Command, result, pass count |
 | Human operation verification document exists | pending/pass/fail/blocked | Document path |
 | Tester followed document and passed | pending/pass/fail/blocked | Tester report summary |
+
+## Gate 与 JYF 阶段对应
+
+| Gate | 对应 JYF 阶段 |
+| --- | --- |
+| Real program behavior implemented | implement |
+| Main-thread review/integration complete | implement / delivery-ledger |
+| Fresh automated verification passed | implement / tester |
+| Human operation verification document exists | acceptance-doc |
+| Tester followed document and passed | tester |
 
 ## Implementation Evidence
 

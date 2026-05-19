@@ -1,6 +1,6 @@
 # Tester Prompt Template
 
-Use and adapt this template after the program and human operation verification document exist.
+程序和真人操作验收文档都存在后，使用并按项目类型改写此模板。
 
 ```text
 你是本项目的验收测试子线程。

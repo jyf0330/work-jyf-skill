@@ -1,6 +1,6 @@
 # Human Operation Verification Document Template
 
-Use this structure when creating a planner/product-facing manual acceptance document.
+创建面向规划者或产品验收的真人操作验收文档时使用此结构。
 
 ```markdown
 # <feature name> 真人操作验收

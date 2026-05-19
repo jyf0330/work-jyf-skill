@@ -118,5 +118,5 @@ Agent 自动扫描 `**/BDD-待审核.md` 判断门禁状态。使用 `references
 
 - 文档基线不足时优先补文档，再进入执行流。
 - 优先用 `references/` 模板补齐文档，不临时自造格式。
-- karpathy-guidelines：遵循 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills/tree/main) 四原则。
+- karpathy-guidelines：遵循 `references/karpathy-guidelines.md` 四原则。
 - 不在这个 skill 里维护独立的项目规范或测试策略。

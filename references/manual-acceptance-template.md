@@ -1,43 +1,53 @@
-# Human Operation Verification Document Template
+# BDD And Test Code Review Template
 
-创建面向规划者或产品验收的真人操作验收文档时使用此结构。
+创建给人工审核者看的 BDD、测试代码和测试前置说明时使用此结构。
 
 ```markdown
-# <feature name> 真人操作验收
+# <feature name> BDD 与测试代码审核
 
-## 覆盖范围
+## 审核结论
 
-- <what this validation covers>
+| 审核项 | 结论 | 修改意见 |
+| --- | --- | --- |
+| 操作型 BDD | 待审核 / 通过 / 失败 |  |
+| BDD 对应测试代码 | 待审核 / 通过 / 失败 |  |
+| 测试前置说明 | 待审核 / 通过 / 失败 |  |
+| 是否允许进入实现 | 是 / 否 |  |
 
-## 不覆盖范围
+## 1. 操作型 BDD
 
-- <what this validation explicitly does not cover>
+每条 BDD 都必须写成人能看懂的用户行为：用户在什么状态下做什么，然后会看到或得到什么。
 
-## 被测环境
+| BDD ID | 场景 | 前置状态 | 用户操作 | 用户会看到/得到什么 | 边界或异常 | 审核结论 | 修改意见 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| BDD-1 |  |  |  |  |  | 待审核 / 通过 / 失败 |  |
+| BDD-2 |  |  |  |  |  | 待审核 / 通过 / 失败 |  |
 
-- 项目路径：
-- 分支 / commit：
-- 测试地址：
-- 浏览器 / 视口：
-- 测试账号 / 测试数据：
+## 2. BDD 对应测试代码
 
-## 启动或重置方式
+每个 BDD 功能至少要映射到一个测试文件和测试用例；测试代码要证明用户操作后的结果，不只证明函数被调用。
 
-- <how to open, launch, seed, or reset the app>
-- <how to recover if a step leaves the app in the wrong state>
-
-## 验收步骤
-
-| 步骤 | 前置状态 | 操作 | 预期可见结果 | 需要记录的证据 | 通过/失败 | 实际观察 |
+| BDD ID | 测试文件 | 测试用例/函数 | 关键断言 | 覆盖结论 | 审核结论 | 修改意见 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | <state> | <user action> | <visible expected result> | <screenshot/value/console/network notes> |  |  |
-| 2 | <state> | <user action> | <visible expected result> | <screenshot/value/console/network notes> |  |  |
+| BDD-1 |  |  |  | 已覆盖 / 部分覆盖 / 未覆盖 | 待审核 / 通过 / 失败 |  |
+| BDD-2 |  |  |  | 已覆盖 / 部分覆盖 / 未覆盖 | 待审核 / 通过 / 失败 |  |
 
-## 最终结论
+## 3. 测试前置说明
 
-- 通过步骤数：
-- 失败步骤数：
-- 阻塞问题：
-- 证据位置：
-- 验收结论：
+这些内容必须足够让 tester 或下一个 agent 复现测试，不需要人工再猜。
+
+| 项目 | 内容 | 审核结论 | 修改意见 |
+| --- | --- | --- | --- |
+| 项目路径 |  | 待审核 / 通过 / 失败 |  |
+| 分支 / commit |  | 待审核 / 通过 / 失败 |  |
+| 安装依赖命令 |  | 待审核 / 通过 / 失败 |  |
+| 启动方式 |  | 待审核 / 通过 / 失败 |  |
+| 测试命令 |  | 待审核 / 通过 / 失败 |  |
+| 测试账号/测试数据 |  | 待审核 / 通过 / 失败 |  |
+| 重置/恢复方式 |  | 待审核 / 通过 / 失败 |  |
+
+## 不需要人工审核
+
+- spec / plan / tasks / analyze / implement / delivery-ledger 默认由 agent 推进。
+- 只有用户明确要求或出现阻塞时，才把这些内容交给人工审核。
 ```

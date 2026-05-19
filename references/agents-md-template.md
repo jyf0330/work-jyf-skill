@@ -18,16 +18,19 @@
 ## JYF / Spec Kit 流程
 
 - 使用 `jyf` 处理初始化、规格、澄清、计划、任务、实现、验收和交付门禁路由。
-- 标准阶段流：`init -> specify/BDD -> clarify? -> plan -> tasks -> BDD gate -> implement -> acceptance-doc -> tester -> delivery-ledger PASS`。
+- 标准阶段流：`init -> specify(BDD) -> clarify? -> human review(behavior BDD / test code / preconditions) -> plan -> tasks -> analyze? -> implement -> tester -> delivery-ledger PASS`。
 - `jyf` 只负责路由和门禁，不维护第二套规格、计划、实现或测试流程。
 - 路由到具体 `/speckit-*` 入口或 JYF `references/` 模板后，按对应入口执行。
 
-## BDD 门禁
+## 人工审核门禁
 
-- `BDD-待审核.md` 存在时，禁止写实现代码；只允许根据 BDD 写或更新测试，或输出待审核状态。
+- 正常流程中，人工只审核三项：操作型 BDD（用户如何操作、会得到什么）、每个 BDD 功能对应的测试代码、运行这些测试需要的前置/操作说明。
+- `BDD-待审核.md` 存在时，禁止写实现代码；只允许根据 BDD 写或更新测试代码和前置说明，或输出待审核状态。
+- 操作型 BDD、BDD 对应测试代码、测试前置说明三项均通过后，才允许进入实现。
 - 只有用户或指定 reviewer 可以将 `BDD-待审核.md` 重命名为 `BDD-已通过.md`；agent 不得自行解锁，除非用户明确授权。
 - 默认使用仓库级门禁：仓库内任意 `BDD-待审核.md` 会阻断整个仓库的 implement 路由。
 - 若项目需要模块级门禁，必须在本文件或更深层 `AGENTS.md` 中明确模块边界和扫描规则。
+- spec、plan、tasks、analyze、implement、delivery-ledger 默认由 agent 负责推进；只有用户明确要求或遇到阻塞时才请求人工介入。
 
 ## 文档基线
 
